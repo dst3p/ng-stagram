@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ng-stagram">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-stagram</title>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="styles.css">
+      <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+      <script src="app.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<nav class="nav navbar-default" role="navigation">
+		<div class="navbar-header">
+			<span class="navbar-brand">ng-stagram</span>
+		</div>
+	</nav>
+	<div class="content" ng-controller="PhotosController">
+		<div style="width: 480px; margin: 0 auto">
+			<input id="search" class="pull-left form-control" type="text" placeholder="Search..." ng-model="tag">
+			<button class="btn btn-default pull-right" ng-click="searchByTag(tag)" type="button">Search</button>
+		</div>
+		<label><input type="checkbox" ng-model="viewFullSizePhotos" /> View Photos @ Full Size</label>
+		<ul class="list-inline" id="photos">
+			<li ng-repeat="pic in pics">
+				<div><a ng-href="{{pic.link}}" target="_blank">
+					<img ng-src="{{ !viewFullSizePhotos && pic.images.low_resolution.url || pic.images.standard_resolution.url }}" alt="">
+					<!-- <video ng-if="pic.videos" ng-src="{{ pic.videos.standard_resolution.url }}">
+					</video> -->
+				</a></div>
+				<div class="detail-panel">
+					<p>
+						<span class="pull-left"><strong>{{pic.comments.count}}</strong></span>
+						<span class="pull-right"><strong>{{pic.likes.count}}</strong></span>
+					</p>
+					<div class="clear-fix">
+						<img class="profile-image" ng-src="{{pic.user.profile_picture}}" alt="">
+						<strong>{{pic.user.username}}</strong>
+						<div ng-class="viewFullSizePhotos ? 'image-caption-full' : 'image-caption-low'">
+							{{pic.caption.text}}
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+html {
+  background-color: #eee;
+}
+body {
+  background-color: transparent;
+  width: 100%;
+}
+div.content {
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+ul.list-inline {
+  display: inline-block;
+}
+ul.list-inline li {
+  margin: 10px;
+}
+.profile-image {
+  width: 50px;
+  border-radius: 25px;
+  -webkit-box-shadow: 0 0 10px #999;
+          box-shadow: 0 0 10px #999;
+  margin: 0 15px 0 5px;
+}
+.detail-panel {
+  text-align: left;
+  margin-top: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px #ccc;
+          box-shadow: 0 0 5px #ccc;
+  white-space: normal;
+}
+.image-caption-low {
+  width: 320px;
+}
+.image-caption-full {
+  width: 640px;
+}
+#search {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
