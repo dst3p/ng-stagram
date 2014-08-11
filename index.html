@@ -2,6 +2,7 @@
 <html lang="en" ng-app="ng-stagram">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<title>ng-stagram</title>
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
       <link rel="stylesheet" href="styles.css">
@@ -11,21 +12,17 @@
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body ng-controller="PhotosController">
-	<nav class="navbar navbar-default">
-			<span class="navbar-brand navbar-left">ng-stagram</span>
-	<form class="navbar-form navbar-right" role="search">
-		<div class="form-group">
+		<div class="search form-group">
+		<h2>ng-stagram</h2>
 			<input id="search" class="form-control" type="text" ng-model="tag" ng-keyup="searchByTag(tag)" placeholder="Search...">
 		</div>
-	</form>
-	</nav>
 	<div class="content">
-		<label><input type="checkbox" ng-model="viewFullSizePhotos" /> View Photos @ Full Size</label>
+		<label class="display-for-large-screens"><input type="checkbox" ng-model="viewFullSizePhotos" /> View Photos @ Full Size</label>
 		<ul class="list-inline" id="photos">
 			<li ng-repeat="pic in pics">
-				<div>
+				<div class="image">
 					<a ng-href="{{pic.link}}" target="_blank">
-					<img ng-src="{{ !viewFullSizePhotos && pic.images.low_resolution.url || pic.images.standard_resolution.url }}" alt="">
+					<img ng-src="{{ !viewFullSizePhotos && pic.images.low_resolution.url || pic.images.standard_resolution.url }}" alt="" />
 					<!-- <video ng-if="pic.videos" ng-src="{{ pic.videos.standard_resolution.url }}">
 					</video> -->
 				</a></div>
@@ -35,8 +32,10 @@
 						<span class="pull-right"><strong>{{pic.likes.count}}</strong></span>
 					</div>
 					<div class="clear-fix">
-						<img class="profile-image" ng-src="{{pic.user.profile_picture}}" alt="">
-						<strong>{{pic.user.username}}</strong>
+						<div class="user-detail">
+							<img class="profile-image" ng-src="{{pic.user.profile_picture}}" alt="">
+							<strong>{{pic.user.username}}</strong>
+						</div>
 						<div ng-class="viewFullSizePhotos ? 'image-caption-full' : 'image-caption-low'">
 							{{pic.caption.text}}
 						</div>
