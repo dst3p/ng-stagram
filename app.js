@@ -1,16 +1,3 @@
-
-// $(document).ready(function() {
-	
-// 	setInterval(function() {
-
-// 		$(".profile-image").animate( { boxShadow: '0 0 10px red' }, 1000)
-// 						   .animate( { boxShadow: '0 0 10px blue' }, 1000)
-// 						   .animate( { boxShadow: '0 0 10px green'}, 1000);
-
-// 	});
-
-// });	
-
 (function() {
 
 	var app = angular.module('ng-stagram', []);
@@ -87,31 +74,3 @@ var delay = (function() {
 	};
 
 })();
-
-// $(document).ready(function() {
-
-// 	$("#search").keyup(function() {
-	
-// 		delay(function() {
-
-// 			if ($("#search").val().length > 2)
-// 			{
-// 				var endpoint = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?client_id=' + client_id + '&callback=JSON_CALLBACK'; 
-
-// 				$http.jsonp(endpoint).success(function(response){
-
-// 					callback(response.data);
-
-// 				});
-// 			}
-
-// 		}, 1500);
-
-// 	});
-	
-// });
-
-
-
-
-

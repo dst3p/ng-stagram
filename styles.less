@@ -55,19 +55,6 @@ ul.list-inline
 		background-color: white;
 }
 
-.image-caption-low
-{
-
-		width: 296px;
-	
-}
-
-.image-caption-full
-{
-	
-	width: 630px;
-}
-
 .user-detail
 {
 	margin: 5px 0;
@@ -91,7 +78,7 @@ ul.list-inline
 /* Media Queries */
 
 @media (max-width: 320px)  {
-	.image-caption-low, .image, .image img
+	.image, .image img
 	{
 		width: 100%;
 		max-width: 320px;
@@ -99,9 +86,12 @@ ul.list-inline
 
 	ul.list-inline
 	{
+		width: 100%;
+
 		li
 		{
 			margin: 10px 0 !important;
+			width: 100%;
 		}
 	}
 
@@ -112,16 +102,16 @@ ul.list-inline
 
 
 
-.image-caption-low, .image-caption-full
-{
-
-		width: 100%;
-	
-}
+	.image-caption-low, .image-caption-full
+	{
+		display: block;
+			width: 100%;
+		
+	}
 }
 
 @media (max-width: 480px) {
-	.image-caption-low, .image, .image img
+	.image, .image img
 	{
 		width: 100%;
 		max-width: 480px;
@@ -129,9 +119,12 @@ ul.list-inline
 
 	ul.list-inline
 	{
+		width: 100%;
+
 		li
 		{
 			margin: 10px 0 !important;
+			width: 100%;
 		}
 	}
 
@@ -139,13 +132,6 @@ ul.list-inline
 	{
 		display: none;
 	}
-
-.image-caption-low, .image-caption-full
-{
-
-		width: 100%;
-	
-}
 }
 
 
@@ -159,16 +145,25 @@ ul.list-inline
 
 	ul.list-inline
 	{
+		width: 100%;
+
 		li
 		{
 			margin: 10px 0 !important;
+			width: 100%;
 		}
 	}
-
-.image-caption-low, .image-caption-full
-{
-
-		width: 100%;
-	
 }
+
+@media (min-width: 641px) {
+
+	.image-caption-low
+	{
+		width: 296px;
+	}
+
+	.image-caption-full
+	{
+		width: 640px;
+	}
 }
